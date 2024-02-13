@@ -36,21 +36,23 @@ export default function App() {
   }
 
   return ( //TODO: PUT INSIDE SAFE AREA VIEW
-    <NavigationContainer>
-      <Tab.Navigator screenOptions={screenOptions}>
-        <Tab.Screen name="HOME" component={Home} options={{
-          tabBarIcon: TabBarIcon("HOME", "home", iconColor[colorScheme])
-        }} />
-        <Tab.Screen name="DATA" component={Data} options={{
-          tabBarIcon: TabBarIcon("DATA", "line-graph", iconColor[colorScheme])
-        }} />
-        <Tab.Screen name="SETTINGS" component={Settings} options={{
-          tabBarIcon: TabBarIcon("SETTINGS", "cog", iconColor[colorScheme])
-        }} />
-        {/* <MaxScreen name="Data" component={Data} icon="line-graph" />
-        <MaxScreen name="Settings" component={Settings} icon="cog" /> */}
-      </Tab.Navigator>
-    </NavigationContainer>
+    <SafeAreaView>
+      <NavigationContainer>
+        <Tab.Navigator screenOptions={screenOptions}>
+          <Tab.Screen name="HOME" component={Home} options={{
+            tabBarIcon: TabBarIcon("HOME", "home", iconColor[colorScheme])
+          }} />
+          <Tab.Screen name="DATA" component={Data} options={{
+            tabBarIcon: TabBarIcon("DATA", "line-graph", iconColor[colorScheme])
+          }} />
+          <Tab.Screen name="SETTINGS" component={Settings} options={{
+            tabBarIcon: TabBarIcon("SETTINGS", "cog", iconColor[colorScheme])
+          }} />
+          {/* <MaxScreen name="Data" component={Data} icon="line-graph" />
+          <MaxScreen name="Settings" component={Settings} icon="cog" /> */}
+        </Tab.Navigator>
+      </NavigationContainer>
+    </SafeAreaView>
   );
 }
 
