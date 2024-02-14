@@ -10,7 +10,7 @@ import React from 'react';
 
 export default function DatapointFrame(name, graphData) {
     return (
-        <View style={{borderRadius: 20}}>
+        <View style={{borderRadius: 20, aspectRatio: 1.5}}>
             <Text style={{width: "100%", position: "absolute", top: 0, fontSize: 16}}>
                 {name}
             </Text>
