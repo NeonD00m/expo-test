@@ -35,8 +35,8 @@ export default function App() {
     }
   }
 
-  return ( //TODO: PUT INSIDE SAFE AREA VIEW
-    <SafeAreaView>
+  return (
+    // <SafeAreaView>
       <NavigationContainer>
         <Tab.Navigator screenOptions={screenOptions}>
           <Tab.Screen name="HOME" component={Home} options={{
@@ -48,11 +48,9 @@ export default function App() {
           <Tab.Screen name="SETTINGS" component={Settings} options={{
             tabBarIcon: TabBarIcon("SETTINGS", "cog", iconColor[colorScheme])
           }} />
-          {/* <MaxScreen name="Data" component={Data} icon="line-graph" />
-          <MaxScreen name="Settings" component={Settings} icon="cog" /> */}
         </Tab.Navigator>
       </NavigationContainer>
-    </SafeAreaView>
+    // </SafeAreaView>
   );
 }
 

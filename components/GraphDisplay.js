@@ -2,7 +2,7 @@ import { LineChart } from 'react-native-chart-kit';
 import { StyleSheet, Text, View, Button, Appearance, useColorScheme } from 'react-native';
 import React from 'react';
 
-export default function GraphDisplay(graph) {
+export default function GraphDisplay({graph}) {
   return (
     <LineChart
       data={graph}
@@ -10,7 +10,7 @@ export default function GraphDisplay(graph) {
       height={300}
       yAxisLabel={'$'}
       chartConfig={{
-        backgroundColor: useColorScheme() === 'light' ? '#ffffff' : '#000000',
+        backgroundColor: useColorScheme() === 'light' ? '#000000' : '#ffffff',
         // backgroundGradientFrom: '#fb8c00',
         // backgroundGradientTo: '#ffa726',
         decimalPlaces: 2, // optional, defaults to 2dp

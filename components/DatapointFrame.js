@@ -5,15 +5,13 @@
 //  -  maybe another label for government, stock, investors, or other "tags"\
 
 import { StyleSheet, Text, View, Button, Appearance, useColorScheme } from 'react-native';
-import { GraphDisplay } from './components/GraphDisplay';
+import GraphDisplay from './GraphDisplay'
 import React from 'react';
 
-export default function DatapointFrame(name, graphData) {
+export default function DatapointFrame({name, graphData}) {
     return (
         <View style={{borderRadius: 20, aspectRatio: 1.5}}>
-            <Text style={{width: "100%", position: "absolute", top: 0, fontSize: 16}}>
-                {name}
-            </Text>
+            <Text title={name} style={{width: "100%", position: "absolute", top: 0, fontSize: 16}} />
             <GraphDisplay graph={graphData} />
             <View style={{flex: 1, width: "100%"}}>
                 {/* put tags? */}

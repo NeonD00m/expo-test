@@ -5,8 +5,8 @@ export default function TabBarIcon(text, icon, colorMap) {
   return ({focused}) => {
     return (
       <View style={{alignItems: "center", justifyContent: "center"}}>
-        <Entypo name={icon} size={24} color={colorMap[focused.toString()]} />
-        <Text style={{fontSize: 12, color: colorMap[focused.toString()]}}>
+        <Entypo name={icon} size={24} color={colorMap[(focused || false).toString()]} />
+        <Text style={{fontSize: 12, color: colorMap[(focused || false).toString()]}}>
             {text}
         </Text>
       </View>

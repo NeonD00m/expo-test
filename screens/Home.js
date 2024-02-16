@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, Button, Appearance, useColorScheme, ScrollView } from 'react-native';
 import React from 'react';
 import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
-import { DatapointFrame } from '../components/DatapointFrame';
+import DatapointFrame from '../components/DatapointFrame';
 
 export default function Home() {
   const insets = useSafeAreaInsets();
@@ -15,13 +15,16 @@ export default function Home() {
     ],
   };
   return (
-    <View style={{flex: 1, alignItems: "center", justifyContent: "center", marginTop: insets.top}}>
-      <Text style={{top: 10, left: 10, fontSize: 24, position: "absolute", fontWeight: "bold"}}>
+    <SafeAreaView style={{flex: 1, alignItems: "center", justifyContent: "flex-start"}}>
+    {/* <View style={{flex: 1, alignItems: "center", justifyContent: "center", marginTop: insets.top}}> */}
+      <Text style={{top: 10, left: 10, alignSelf: "flex-start", fontSize: 24, fontWeight: "bold", marginBottom: 20}}>
         Welcome back, Om Abhijit Talathi
       </Text>
-      <View style={{width: "100%", marginBottom: "10%"}}>
+      <View style={{width: "100%", marginBottom: "10%", height: "40%"}}>
         <Text style={{
+          marginLeft: "5%",
           height: "10%"
+          
         }}>
           Investments
         </Text>
@@ -42,6 +45,6 @@ export default function Home() {
             (insert carousel for random stats on the economy)
         </Text>
       </View>
-    </View>
+    </SafeAreaView>
   );
 }
