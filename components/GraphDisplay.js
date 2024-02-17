@@ -6,11 +6,11 @@ export default function GraphDisplay({graph}) {
   return (
     <LineChart
       data={graph}
-      width={400}
-      height={300}
+      width={300}
+      height={200} //FIND A NEW GRAPHING LIBRARY BECAUSE THIS SUCKS
       yAxisLabel={'$'}
       chartConfig={{
-        backgroundColor: useColorScheme() === 'light' ? '#000000' : '#ffffff',
+        backgroundColor: useColorScheme() === 'light' ? '#ffffff' : '#000000',
         // backgroundGradientFrom: '#fb8c00',
         // backgroundGradientTo: '#ffa726',
         decimalPlaces: 2, // optional, defaults to 2dp
@@ -20,10 +20,15 @@ export default function GraphDisplay({graph}) {
         }
       }}
       bezier
-      style={{
-        // marginVertical: 8,
-        borderRadius: 16
-      }}
+      style={styles.chart}
     />
   );
 }
+
+const styles = StyleSheet.create({
+  chart: {
+    borderRadius: 16,
+    width: "100%",
+    height: "100%"
+  },
+});
