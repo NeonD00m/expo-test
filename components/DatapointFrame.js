@@ -8,14 +8,25 @@ import { StyleSheet, Text, View, Button, Appearance, useColorScheme } from 'reac
 import GraphDisplay from './GraphDisplay'
 import React from 'react';
 
-export default function DatapointFrame({name, graphData}) {
+export default function DatapointFrame({name, graphData, openWindow}) {
     return (
-        <View style={{borderRadius: 20, aspectRatio: 1.5}}>
-            <Text title={name} style={{width: "100%", position: "absolute", top: 0, fontSize: 16}} />
+        <View style={{borderRadius: 20, aspectRatio: 1.5, height: "100%"}} onTouchEnd={(event) => {
+            openWindow(name, graphData, data);
+        }}>
             <GraphDisplay graph={graphData} />
+            <Text title={name} style={styles.title} />
             <View style={{flex: 1, width: "100%"}}>
                 {/* put tags? */}
             </View>
         </View>
     );
 }
+
+const styles = StyleSheet.create({
+  title: {
+    width: "100%",
+    position: "absolute", top: 0,
+    fontSize: 16,
+    backgroundColor: "#ffffff", color: "#000000"
+  },
+});
