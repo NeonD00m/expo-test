@@ -2,17 +2,11 @@ import { StyleSheet, Text, View, Button, Appearance, useColorScheme } from 'reac
 import DatapointFrame from '../components/DatapointFrame';
 import React from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { getTestData } from '../modules/GetData';
 
 export default function Data() {
-    const line = {
-      labels: ['January', 'February', 'March', 'April', 'May', 'June'],
-      datasets: [
-        {
-          data: [20, 45, 28, 80, 99, 43],
-          strokeWidth: 2, // optional
-        },
-      ],
-    };
+    const line = getTestData();
+    //later change this into a scrolling view
 
     return (
       <SafeAreaView style={{flex: 1, alignItems: "center", justifyContent: "flex-start"}}>
