@@ -1,3 +1,4 @@
+const strokeWidth = 2;
 
 function getTestData() {
   return {
@@ -5,7 +6,7 @@ function getTestData() {
     datasets: [
       {
         data: [20, 45, 28, 80, 99, 43],
-        strokeWidth: 2, // optional
+        strokeWidth: strokeWidth, // optional
       },
     ],
   };
@@ -13,6 +14,18 @@ function getTestData() {
 
 function getData(name) {
 
+}
+
+function formatData(points, labels) {
+  return {
+    labels: labels,
+    datasets: [
+      {
+        data: points,
+        strokeWidth: strokeWidth,
+      },
+    ],
+  };
 }
 
 export {

@@ -7,7 +7,9 @@ export default function Carousel({title, children}) {
       <View style={{width: "100%", marginBottom: "10%", height: "30%"}}>
         <Text style={{
           marginLeft: "5%",
-          height: "10%"
+          height: "10%",
+          marginBottom: "1%",
+          fontSize: 18
         }}>
           {title}
         </Text>

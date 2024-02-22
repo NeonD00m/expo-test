@@ -13,6 +13,7 @@ export default function Home() {
   const [dataVisible, setVisibility] = React.useState(false)
   const [dataState, setDataState] = React.useState({name: "something", graph: smp500, data: {}})
   const windowHandler = (name, graph, data) => {
+    console.log(`selected data: ${name}`);
     setDataState({
       name: name,
       graph: graph,
@@ -35,7 +36,7 @@ export default function Home() {
         <DatapointFrame name="Inflation" graphData={smp500} openWindow={windowHandler}/>
         <DatapointFrame name="idek" graphData={smp500} openWindow={windowHandler}/>
       </Carousel>
-      {/* <DataWindow visible={dataVisible} toggle={setVisibility} state={dataState}/> */}
+      <DataWindow visible={dataVisible} toggle={setVisibility} state={dataState}/>
     </SafeAreaView>
   );
 }

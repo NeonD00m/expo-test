@@ -3,6 +3,7 @@ import DatapointFrame from '../components/DatapointFrame';
 import React from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { getTestData } from '../modules/GetData';
+import GraphDisplay from '../components/GraphDisplay';
 
 export default function Data() {
     const line = getTestData();
@@ -15,6 +16,7 @@ export default function Data() {
         <Text>
           S&P 500
         </Text>
+        {/* <GraphDisplay /> */}
       </SafeAreaView>
     )
 }
