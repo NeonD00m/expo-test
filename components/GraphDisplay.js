@@ -2,21 +2,22 @@ import { LineChart } from 'react-native-chart-kit';
 import { StyleSheet, Text, View, Button, Appearance, useColorScheme } from 'react-native';
 import React from 'react';
 
-export default function GraphDisplay({graph}) {
+export default function GraphDisplay({graph, parent, width, height}) {
   return (
     <LineChart
       data={graph}
-      width={300}
-      height={200} //FIND A NEW GRAPHING LIBRARY BECAUSE THIS SUCKS
+      width={width || 335}
+      height={height || 195}
       yAxisLabel={'$'}
       chartConfig={{
-        backgroundColor: useColorScheme() === 'light' ? '#ffffff' : '#000000',
-        // backgroundGradientFrom: '#fb8c00',
-        // backgroundGradientTo: '#ffa726',
+        backgroundGradientFrom: '#ffffff',
+        backgroundGradientTo: '#ffffff',//'#d1d1d1',
         decimalPlaces: 2, // optional, defaults to 2dp
-        color: (opacity) => `rgba(255, 255, 255, ${opacity})`,
+        color: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
         style: {
-          borderRadius: 16
+          // borderRadius: 20,
+          // borderBottomLeftRadius: 20,
+          // borderBottomRightRadius: 20,
         }
       }}
       bezier
@@ -27,8 +28,11 @@ export default function GraphDisplay({graph}) {
 
 const styles = StyleSheet.create({
   chart: {
-    borderRadius: 16,
+    marginTop: 26,
+    borderRadius: 20,
+    // borderBottomLeftRadius: 20,
+    // borderBottomRightRadius: 20,
     width: "100%",
-    height: "100%"
+    height: "100%",
   },
 });
