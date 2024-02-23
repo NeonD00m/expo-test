@@ -8,10 +8,10 @@ import { getTestData, getData } from '../modules/GetData';
 
 export default function Home() {
   const insets = useSafeAreaInsets();
-  const smp500 = getTestData();
+  const realGDP = getTestData();
 
   const [dataVisible, setVisibility] = React.useState(false)
-  const [dataState, setDataState] = React.useState({name: "something", graph: smp500, data: {}})
+  const [dataState, setDataState] = React.useState({name: "something", graph: realGDP, data: {}})
   const windowHandler = (name, graph, data) => {
     console.log(`selected data: ${name}`);
     setDataState({
@@ -29,12 +29,12 @@ export default function Home() {
         Welcome back, Om Abhijit Talathi
       </Text>
       <Carousel title="Investments">
-        <DatapointFrame name="S&P 500" graphData={smp500} openWindow={windowHandler}/>
-        <DatapointFrame name="NASDAQ" graphData={smp500} openWindow={windowHandler}/>
+        <DatapointFrame data={realGDP} openWindow={windowHandler}/>
+        <DatapointFrame data={realGDP} openWindow={windowHandler}/>
       </Carousel>
       <Carousel title="General Economy">
-        <DatapointFrame name="Inflation" graphData={smp500} openWindow={windowHandler}/>
-        <DatapointFrame name="idek" graphData={smp500} openWindow={windowHandler}/>
+        <DatapointFrame data={realGDP} openWindow={windowHandler}/>
+        <DatapointFrame data={realGDP} openWindow={windowHandler}/>
       </Carousel>
       <DataWindow visible={dataVisible} toggle={setVisibility} state={dataState}/>
     </SafeAreaView>
