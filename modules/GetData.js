@@ -1,30 +1,51 @@
 const strokeWidth = 2;
 
 function getTestData() {
-  return {
-    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June'],
-    datasets: [
-      {
-        data: [20, 45, 28, 80, 99, 43],
-        strokeWidth: strokeWidth, // optional
-      },
-    ],
+  return { //Real GDP
+    name: 'Real GDP',
+    similar: ['GDP', 'GDP_Capita'],
+    graph: {
+      labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June'],
+      datasets: [
+        {
+          data: [20, 45, 28, 80, 99, 43],
+          strokeWidth: strokeWidth, // optional
+        },
+      ],
+    }
   };
 }
 
 function getData(name) {
+  let data;
+  switch (name) {
+    case 'S&P500':
+      
+      break;
+    
+    case 'RealGDP':
 
+      break;
+  
+    default:
+      break;
+  };
+  return data;
 }
 
-function formatData(points, labels) {
+function formatData(name, similar, points, labels) {
   return {
-    labels: labels,
-    datasets: [
-      {
-        data: points,
-        strokeWidth: strokeWidth,
-      },
-    ],
+    name: name,
+    similar: similar,
+    graph: {
+      labels: labels,
+      datasets: [
+        {
+          data: points,
+          strokeWidth: strokeWidth,
+        },
+      ],
+    }
   };
 }
 
