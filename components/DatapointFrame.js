@@ -8,18 +8,18 @@ import { StyleSheet, Text, View, Button, Appearance, useColorScheme } from 'reac
 import GraphDisplay from './GraphDisplay'
 import React from 'react';
 
-export default function DatapointFrame({name, graphData, data, openWindow}) {
+export default function DatapointFrame({data, openWindow}) {
   const self = React.useRef()
   return (
     <View ref={self} style={styles.frame} onTouchEnd={(event) => {
-        openWindow(name, graphData, data);
+        openWindow(name, data.graph, data);
     }}>
-      <GraphDisplay graph={graphData} parent={self}
+      <GraphDisplay graph={data.graph} parent={self}
         width={self.current && self.current.offsetWidth ? self.current.offsetWidth : null}
         height={self.current && self.current.offsetHeight ? self.current.offsetHeight : null}
       />
       <Text style={styles.title}>
-        {name}
+        {data.name}
       </Text>
       <View style={{flex: 1, width: "100%"}}>
         {/* put tags? */}
