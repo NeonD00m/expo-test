@@ -6,17 +6,23 @@ import { getTestData } from '../modules/GetData';
 import GraphDisplay from '../components/GraphDisplay';
 
 export default function Data() {
-    const line = getTestData();
+    const realGDP = getTestData();
     //later change this into a scrolling view
 
     return (
       <SafeAreaView style={{flex: 1, alignItems: "center", justifyContent: "flex-start"}}>
         {/* put a scrolling list of favorited stats */}
         {/* <DatapointFrame name="Round Square Ltd." graphData={line} /> */}
-        <Text>
-          S&P 500
+        <Text style={styles.title}>
+          Bookmarked
         </Text>
-        {/* <GraphDisplay /> */}
+        <GraphDisplay graph={realGDP.graph} width={400} height={300}/>
       </SafeAreaView>
     )
 }
+
+const styles = StyleSheet.create({
+  title: {
+    fontSize: 32,
+  }
+})
