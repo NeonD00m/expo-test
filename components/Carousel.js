@@ -4,7 +4,7 @@ import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context'
 
 export default function Carousel({title, children}) {
     return (
-      <View style={{width: "100%", marginBottom: "10%", height: "30%"}}>
+      <View style={{width: "100%", marginBottom: "10%", height: 260}}>
         <Text style={{
           marginLeft: "5%",
           height: "10%",
