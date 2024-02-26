@@ -11,14 +11,9 @@ export default function Home() {
   const realGDP = getTestData();
 
   const [dataVisible, setVisibility] = React.useState(false)
-  const [dataState, setDataState] = React.useState({name: "something", graph: realGDP, data: {}})
-  const windowHandler = (name, graph, data) => {
-    console.log(`selected data: ${name}`);
-    setDataState({
-      name: name,
-      graph: graph,
-      data: data
-    });
+  const [dataState, setDataState] = React.useState(realGDP)
+  const windowHandler = (data) => {
+    setDataState(data);
     setVisibility(true);
   };
 
@@ -36,7 +31,7 @@ export default function Home() {
         <DatapointFrame data={realGDP} openWindow={windowHandler}/>
         <DatapointFrame data={realGDP} openWindow={windowHandler}/>
       </Carousel>
-      <DataWindow visible={dataVisible} toggle={setVisibility} state={dataState}/>
+      <DataWindow visible={dataVisible} toggle={setVisibility} openWindow={windowHandler} state={dataState}/>
     </SafeAreaView>
   );
 }
