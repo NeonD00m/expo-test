@@ -1,39 +1,47 @@
 const strokeWidth = 2;
 
 function getTestData() {
-  return { //Real GDP
-    name: 'Real GDP',
-    similar: ['GDP', 'GDP_Capita'],
-    graph: {
-      labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June'],
-      datasets: [
-        {
-          data: [20, 45, 28, 80, 99, 43],
-          strokeWidth: strokeWidth, // optional
-        },
-      ],
-    }
-  };
+  return getData('GDP');
 }
 
 function getData(name) {
   let data;
   switch (name) {
-    case 'S&P500':
-      
+    // case 'S&P500':
+    //   data = getTestData();
+    //   break;
+    case 'Inflation':
+      data = formatData(
+        'Inflation', ['RealGDP', 'GDP'],
+        ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June'],
+        [20, 45, 28, 80, 99, 43]
+      );
       break;
-    
-    case 'RealGDP':
 
+    case 'RealGDP':
+      data = formatData(
+        'Real GDP', ['GDP', 'Inflation'],
+        ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June'],
+        [20, 45, 28, 80, 99, 43]
+      );
       break;
-  
+
+    case 'GDP':
+      data = formatData(
+        '(Nominal) GDP', ['RealGDP', 'Inflation'],
+        ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June'],
+        [20, 45, 28, 80, 99, 43]
+      );
+      break;
+
     default:
+      data = getData('GDP');
       break;
   };
   return data;
 }
 
-function formatData(name, similar, points, labels) {
+function formatData(name, similar, labels, points) {
   return {
     name: name,
     similar: similar,
