@@ -2,7 +2,7 @@ import { LineChart } from 'react-native-chart-kit';
 import { StyleSheet, Text, View, Button, Appearance, useColorScheme } from 'react-native';
 import React from 'react';
 
-export default function GraphDisplay({graph, parent, width, height}) {
+export default function GraphDisplay({graph, style, width, height}) {
   return (
     <LineChart
       data={graph}
@@ -15,13 +15,13 @@ export default function GraphDisplay({graph, parent, width, height}) {
         decimalPlaces: 2, // optional, defaults to 2dp
         color: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
         style: {
-          // borderRadius: 20,
+          borderRadius: 20,
           // borderBottomLeftRadius: 20,
           // borderBottomRightRadius: 20,
         }
       }}
       bezier
-      style={styles.chart}
+      style={style || styles.chart}
     />
   );
 }
@@ -29,7 +29,7 @@ export default function GraphDisplay({graph, parent, width, height}) {
 const styles = StyleSheet.create({
   chart: {
     marginTop: 26,
-    borderRadius: 20,
+    // borderRadius: 20,
     // borderBottomLeftRadius: 20,
     // borderBottomRightRadius: 20,
     width: "100%",
