@@ -12,14 +12,14 @@ export default function DatapointFrame({data, openWindow}) {
   const self = React.useRef()
   return (
     <View ref={self} style={styles.frame} onTouchEnd={(event) => {
-        openWindow(name, data.graph, data);
+        openWindow(data);
     }}>
       <GraphDisplay graph={data.graph} parent={self}
         width={self.current && self.current.offsetWidth ? self.current.offsetWidth : null}
         height={self.current && self.current.offsetHeight ? self.current.offsetHeight : null}
       />
       <Text style={styles.title}>
-        {data.name}
+        {data ? data.name : "loading..."}
       </Text>
       <View style={{flex: 1, width: "100%"}}>
         {/* put tags? */}
