@@ -36,7 +36,7 @@ export default function App() {
   }
 
   return (
-    // <SafeAreaView>
+    // <View style={{backgroundColor: "#ededed"}}>
       <NavigationContainer>
         <Tab.Navigator screenOptions={screenOptions}>
           <Tab.Screen name="HOME" component={Home} options={{
@@ -50,7 +50,7 @@ export default function App() {
           }} />
         </Tab.Navigator>
       </NavigationContainer>
-    // </SafeAreaView>
+    // </View>
   );
 }
 
