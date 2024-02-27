@@ -33,7 +33,14 @@ export default function App() {
       height: 60,
       background: isLightTheme ? '#d0d0c0' : '#242c40',
     }
-  }
+  };
+
+  // {name: []}
+  const [settings, changeSettings] = React.useState({
+    override: ["Override Device Color Theme", false],
+    overrideMode: ["Override Dark Mode", true, (settings) => {return settings.override[1]}],
+    overrideName: ["Override Name", ""],
+  });
 
   return (
     // <View style={{backgroundColor: "#ededed"}}>
