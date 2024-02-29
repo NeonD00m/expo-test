@@ -4,6 +4,8 @@ function getTestData() {
   return getData('GDP');
 }
 
+//future items: (leading indicators) orders of capital goods, building permits
+// (current indicators) personal income, retail sales?? IDK
 function getData(name) {
   let data;
   switch (name) {
