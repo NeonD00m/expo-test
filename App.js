@@ -5,6 +5,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Entypo } from '@expo/vector-icons';
 import TabBarIcon from './components/TabBarIcon';
+import React from 'react';
 
 const iconColor = {
   light: {
@@ -34,13 +35,6 @@ export default function App() {
       background: isLightTheme ? '#d0d0c0' : '#242c40',
     }
   };
-
-  // {name: []}
-  const [settings, changeSettings] = React.useState({
-    override: ["Override Device Color Theme", false],
-    overrideMode: ["Override Dark Mode", true, (settings) => {return settings.override[1]}],
-    overrideName: ["Override Name", ""],
-  });
 
   return (
     // <View style={{backgroundColor: "#ededed"}}>
