@@ -18,20 +18,44 @@ export default function Home() {
   };
 
   return (
-    <SafeAreaView style={{flex: 1, alignItems: "center", justifyContent: "flex-start"}}>
-    {/* <View style={{flex: 1, alignItems: "center", justifyContent: "center", marginTop: insets.top}}> */}
-      <Text style={{top: 10, left: 10, alignSelf: "flex-start", fontSize: 24, fontWeight: "bold", marginBottom: 20}}>
-        Welcome back, Om Abhijit Talathi
-      </Text>
-      <Carousel title="Investments">
-        <DatapointFrame data={realGDP} openWindow={windowHandler}/>
-        <DatapointFrame data={realGDP} openWindow={windowHandler}/>
-      </Carousel>
-      <Carousel title="General Economy">
-        <DatapointFrame data={realGDP} openWindow={windowHandler}/>
-        <DatapointFrame data={realGDP} openWindow={windowHandler}/>
-      </Carousel>
+    <SafeAreaView style={styles.container}>
       <DataWindow visible={dataVisible} toggle={setVisibility} openWindow={windowHandler} state={dataState}/>
+      <ScrollView style={styles.scrollView} horizontal={false} contentContainerStyle={styles.container}>
+        <Text style={styles.welcomeText}>
+          Welcome back, Om Abhijit Talathi
+        </Text>
+        <Carousel title="Investments">
+          <DatapointFrame data={realGDP} openWindow={windowHandler}/>
+          <DatapointFrame data={realGDP} openWindow={windowHandler}/>
+        </Carousel>
+        <Carousel title="General Economy">
+          <DatapointFrame data={realGDP} openWindow={windowHandler}/>
+          <DatapointFrame data={realGDP} openWindow={windowHandler}/>
+        </Carousel>
+        <Carousel title="Bueinsses">
+          <DatapointFrame data={realGDP} openWindow={windowHandler}/>
+          <DatapointFrame data={realGDP} openWindow={windowHandler}/>
+        </Carousel>
+      </ScrollView>
     </SafeAreaView>
   );
 }
+
+const styles = StyleSheet.create({
+  welcomeText: {
+    top: 10, left: 10,
+    alignSelf: "flex-start",
+    fontSize: 24, fontWeight: "bold",
+    marginBottom: 20,
+  },
+  scrollView: {
+    flex: 1,
+    width: "100%",
+    height: "100%",
+  },
+  container: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "flex-start",
+  },
+})
