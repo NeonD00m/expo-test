@@ -1,6 +1,6 @@
 //for when the user clicks on a DatapointFrame
-import { StyleSheet, Text, View, Button, Modal, useColorScheme, ScrollView, Dimensions } from 'react-native';
-import { useSafeAreaFrame, useSafeAreaInsets, SafeAreaView } from 'react-native-safe-area-context';
+import { StyleSheet, Text, View, Button, Modal, useColorScheme, ScrollView, Dimensions, SafeAreaView } from 'react-native';
+// import { useSafeAreaFrame, useSafeAreaInsets, SafeAreaView } from 'react-native-safe-area-context';
 import GraphDisplay from './GraphDisplay';
 import React from 'react';
 import { Entypo } from '@expo/vector-icons';
@@ -27,8 +27,6 @@ const iconImage = {
 export default function DataWindow({visible, toggle, state, openWindow}) {
   const colorScheme = useColorScheme();
   const isLightTheme = colorScheme === 'light';
-  const insets = useSafeAreaInsets();
-  const frame = useSafeAreaFrame();
   const [favorited, setFavorited] = React.useState(false);
   let similarFrames = (state && state.similar ? state.similar : []).map((statisticId, index) => {
     return (

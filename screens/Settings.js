@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Button, ScrollView, useColorScheme, TextInput, Switch } from 'react-native';
+import { StyleSheet, Text, View, Button, ScrollView, useColorScheme, TextInput, Switch, SafeAreaView } from 'react-native';
 import React from 'react';
 import { useSettings, getDefaultSettings } from '../modules/UseSettings';
 
@@ -14,7 +14,7 @@ export default function Settings() {
     //TODO: use value[3] function to check whether this will be enabled
     console.log(value)
     return (
-      <View style={styles.settingRow} key={index}>
+      <SafeAreaView style={styles.settingRow} key={index}>
         <Text style={styles.rowText}>
           {text}
         </Text>
@@ -43,7 +43,7 @@ export default function Settings() {
             // keyboardType='default'
           />
         )}
-      </View>
+      </SafeAreaView>
     );
   })
   

@@ -1,6 +1,6 @@
-import { StyleSheet, Text, View, Button, Appearance, useColorScheme, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, Button, Appearance, useColorScheme, ScrollView, SafeAreaView } from 'react-native';
 import React from 'react';
-import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
+// import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 import DataWindow from '../components/DataWindow';
 import DatapointFrame from '../components/DatapointFrame';
 import Carousel from '../components/Carousel';

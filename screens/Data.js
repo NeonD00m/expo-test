@@ -1,7 +1,7 @@
-import { StyleSheet, Text, View, Button, Appearance, useColorScheme } from 'react-native';
+import { StyleSheet, Text, View, Button, Appearance, useColorScheme, SafeAreaView } from 'react-native';
 import DatapointFrame from '../components/DatapointFrame';
 import React from 'react';
-import { SafeAreaView } from 'react-native-safe-area-context';
+// import { SafeAreaView } from 'react-native-safe-area-context';
 import { getTestData } from '../modules/GetData';
 import GraphDisplay from '../components/GraphDisplay';
 

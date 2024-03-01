@@ -1,5 +1,5 @@
-import { StyleSheet, Text, View, Button, Appearance, useColorScheme } from 'react-native';
-import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import { StyleSheet, Text, View, Button, Appearance, useColorScheme, SafeAreaView } from 'react-native';
+// import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { Home, Data, Settings } from './screens';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
