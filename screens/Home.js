@@ -32,10 +32,10 @@ export default function Home() {
           <DatapointFrame data={realGDP} openWindow={windowHandler}/>
           <DatapointFrame data={realGDP} openWindow={windowHandler}/>
         </Carousel>
-        <Carousel title="Bueinsses">
+        {/* <Carousel title="Business">
           <DatapointFrame data={realGDP} openWindow={windowHandler}/>
           <DatapointFrame data={realGDP} openWindow={windowHandler}/>
-        </Carousel>
+        </Carousel> */}
       </ScrollView>
     </SafeAreaView>
   );
@@ -57,5 +57,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "flex-start",
+    // backgroundColor: 'red',
+    // flexGrow: 1,
   },
 })

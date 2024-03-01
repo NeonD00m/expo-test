@@ -16,13 +16,13 @@ export default function Data() {
         <Text style={styles.title}>
           Bookmarked
         </Text>
-        <GraphDisplay graph={realGDP.graph} width={400} height={300}/>
+        <GraphDisplay graph={realGDP.graph} width={420} height={300}/>
       </SafeAreaView>
     )
 }
 
 const styles = StyleSheet.create({
   title: {
-    fontSize: 32,
+    fontSize: 28,
   }
 })
